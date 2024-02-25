@@ -20,7 +20,14 @@ function Letchworth() {
   let distance = "17.0 mi"
   let rating = "4.5"
   let location = "150 Letchworth Park"
-  let challenges=["Hike the Gibsonville Trail","Rent a kayak or canoe and paddle the Genesee River","Swim at the pool near the Lower Falls","Birdwatch at the Humphrey Nature Center","Visit the William Pryor Letchworth Museum"]
+    let challenges = [
+        { text: "Hike the Gibsonville Trail", points:  85 },
+        { text: "Rent a kayak or canoe and paddle the Genesee River", points:  100 },
+        { text: "Swim at the pool near the Lower Falls", points:  40 },
+        { text: "Birdwatch at the Humphrey Nature Center", points:  20 },
+        { text: "Visit the William Pryor Letchworth Museum", points:  10 },
+    ];
+  //let challenges=["Hike the Gibsonville Trail","Rent a kayak or canoe and paddle the Genesee River","Swim at the pool near the Lower Falls","Birdwatch at the Humphrey Nature Center","Visit the William Pryor Letchworth Museum"]
   return (
     <div className='flex-row'>
     <div className='max-w-7xl mx-auto'>
@@ -61,8 +68,11 @@ function Letchworth() {
                     Challenges for you
                 </h1>
                 {challenges.map((challenge, index) => (
-                    <div key={index} className="mb-2">
-                        <span className="text-gray-700">&#8226;</span> {challenge}
+                    <div key={index} className="mb-2 relative group">
+                        <span className="text-gray-700 hover:text-blue-500">&#8226;</span> {challenge.text}
+                        <div className="absolute top-0 left-1/2 invisible group-hover:visible">
+                            <span className="text-gray-400 ml-2">{challenge.points} points</span>
+                        </div>
                     </div>
                 ))}
             </div>
