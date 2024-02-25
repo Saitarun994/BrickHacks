@@ -3,6 +3,7 @@ import {BrowserRouter,Link,Route, Routes} from 'react-router-dom';
 import {header_logo,default_dp} from './assets';
 import {Home} from './pages'
 import LoginButton from "./components/LoginButton.jsx";
+import Profile from "./components/Profile.jsx";
 function App() {
   
   return (
@@ -21,6 +22,7 @@ function App() {
 
         <div>
           <LoginButton/>
+            <Profile/>
         </div>
 
       </header>
