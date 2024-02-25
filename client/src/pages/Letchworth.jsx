@@ -11,7 +11,7 @@ function Letchworth() {
   let distance = "17.0 mi"
   let rating = "4.5"
   let location = "150 Letchworth Park"
-  
+  let challenges=["Hike the Gibsonville Trail","Rent a kayak or canoe and paddle the Genesee River","Swim at the pool near the Lower Falls","Birdwatch at the Humphrey Nature Center","Visit the William Pryor Letchworth Museum"]
   return (
     <div className='flex-row'>
     <div className='max-w-7xl mx-auto'>
@@ -37,18 +37,33 @@ function Letchworth() {
             {description}
             </h1>
         </div>
-        <div className='max-w-5xl mx-auto'>
-        <div className="flex items-center justify-center bg-gray-200 p-4 space-x-4 rounded-lg">
-            <img
-                src={hmap}  // Replace with your actual image source
-                alt="Small Image"
-                className="w-48 rounded-md mr-4"
-            />
-            <button className="bg-blue-500 text-white px-4 py-2 rounded">
-                Book Now
-            </button>
+
+        <div className='max-w-7xl mx-auto'>
+            <div className="bg-gray-200 p-4 rounded">
+                <h1 className='font-extrabold text-[#222328] text-[24px] mb-2 px-2'>
+                  Challenges for you
+                </h1>
+                {challenges.map((challenge, index) => (
+                    <div key={index} className="mb-2">
+                    <span className="text-gray-700">&#8226;</span> {challenge}
+                    </div>
+                ))}
             </div>
-        </div>
+            <h1 className='font-extrabold text-[#222328] text-[24px] mt-10 px-2 '>
+                Make reservations now
+                </h1>
+            <div className="flex items-center p-4 space-x-4 rounded-lg">
+                
+                <img
+                    src={hmap}  // Replace with your actual image source
+                    alt="Small Image"
+                    className="w-48 rounded-md mr-4"
+                />
+                <button className="bg-blue-500 text-white px-4 py-2 rounded">
+                    Book Now
+                </button>
+                </div>
+            </div>
     </div>
     
   )
