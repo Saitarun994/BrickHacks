@@ -2,6 +2,7 @@ import React from 'react';
 import {BrowserRouter,Link,Route, Routes} from 'react-router-dom';
 import {header_logo,default_dp} from './assets';
 import {Home} from './pages'
+import LoginButton from "./components/LoginButton.jsx";
 function App() {
   
   return (
@@ -19,10 +20,7 @@ function App() {
         </Link>
 
         <div>
-          <button className="bg-[#fcc688] hover:bg-[#baa042] text-black font-bold py-2 px-4 rounded
-          hover:shadow-lg hover:transform hover:translate-y-[-2px] transition duration-300 ease-in-out">
-            Sign-In
-          </button>
+          <LoginButton/>
         </div>
 
       </header>
