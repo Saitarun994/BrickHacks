@@ -15,7 +15,7 @@ function App() {
         </div>
 
         <Link to="/">
-          <img src={header_logo} alt="logo" className="w-56 object-contain"/>
+          <div class="font-extrabold text-4xl text-shadow">TerraVista</div>
         </Link>
 
         <div>

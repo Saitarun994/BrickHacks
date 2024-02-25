@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import {useNavigate} from 'react-router-dom'
 import Card from '../components/Card'
-import { preview } from '../assets'
+import { map_preview} from '../assets'
 
 
 function Home() {
@@ -11,13 +11,13 @@ function Home() {
     <div className='max-w-7xl mx-auto'>
       <div className="flex flex-col items-center justify-center">
         <h1 className='font-extrabold text-[#222328] text-[32px]'>
-          About Product
+         Discover , Explore , Share
         </h1>
         <p className='mt-2 text-[#666e75] text-[16px] max-w [500px]'>
-          Sub-text
+          Terravista: Where Trails and Tales Collide - Hike, Review, Rejoice!
         </p>
-        <div class="bg-gray-200 p-6 w-120 rounded-xl mb-10">
-          <img src={preview} alt="Map Preview" class="w-full h-auto rounded-lg shadow-md"/>
+        <div className="bg-gray-200 p-6 md:w-80 lg:w-96 rounded-xl mb-10 overflow-hidden">
+          <img src={map_preview} alt="Map Preview" className="object-cover w-full h-full rounded-lg shadow-md"/>
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
