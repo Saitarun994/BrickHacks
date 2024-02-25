@@ -15,6 +15,7 @@ import c6 from './c6.png';
 import c7 from './c7.png';
 import c8 from './c8.png';
 import c9 from './c9.png';
+import hmap from './hmap.png';
 
 export {
   download,
@@ -25,5 +26,6 @@ export {
   default_dp,
   gears,
   map_preview,
-  c1,c2,c3,c4,c5,c6,c7,c8,c9
+  c1,c2,c3,c4,c5,c6,c7,c8,c9,
+  hmap
 };
