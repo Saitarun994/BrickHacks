@@ -1,9 +1,18 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {useNavigate} from 'react-router-dom'
 import {c3,hmap} from '../assets'
+import ActivityIcons from "../components/ActivityIcons.jsx";
+import ChooseTripButton from "../components/ChooseTripButton.jsx";
 
 
 function Letchworth() {
+
+    const [showReserveRoom, setShowReserveRoom] = useState(false);
+
+    const handleTripChosen = () => {
+        setShowReserveRoom(true);
+    };
+
   let title = "Letchworth State Park"
   let tags = ["Hiking", "nature trail", "camping", "swimming", "rafting", "hot air balloon"]
   let difficulty = "Easy"
@@ -11,7 +20,14 @@ function Letchworth() {
   let distance = "17.0 mi"
   let rating = "4.5"
   let location = "150 Letchworth Park"
-  let challenges=["Hike the Gibsonville Trail","Rent a kayak or canoe and paddle the Genesee River","Swim at the pool near the Lower Falls","Birdwatch at the Humphrey Nature Center","Visit the William Pryor Letchworth Museum"]
+    let challenges = [
+        { text: "Hike the Gibsonville Trail", points:  85 },
+        { text: "Rent a kayak or canoe and paddle the Genesee River", points:  100 },
+        { text: "Swim at the pool near the Lower Falls", points:  40 },
+        { text: "Birdwatch at the Humphrey Nature Center", points:  20 },
+        { text: "Visit the William Pryor Letchworth Museum", points:  10 },
+    ];
+  //let challenges=["Hike the Gibsonville Trail","Rent a kayak or canoe and paddle the Genesee River","Swim at the pool near the Lower Falls","Birdwatch at the Humphrey Nature Center","Visit the William Pryor Letchworth Museum"]
   return (
     <div className='flex-row'>
     <div className='max-w-7xl mx-auto'>
@@ -33,39 +49,49 @@ function Letchworth() {
             </div>
         </div>
         <div className='max-w-7xl mx-auto'>
-            <h1 className='font-extrabold text-[#222328] text-[24px] mb-2 px-2'>
+            <h1 className='text-[#222328] text-[22px] mb-2 px-2 text-justify'>
             {description}
             </h1>
         </div>
 
+
         <div className='max-w-7xl mx-auto'>
+            <div className="bg-white p-4 rounded">
+                <h1 className='font-extrabold text-[#222328] text-[24px] mb-2 px-2'>
+                    Activities
+                </h1>
+                <ActivityIcons/>
+            </div>
+
             <div className="bg-gray-200 p-4 rounded">
                 <h1 className='font-extrabold text-[#222328] text-[24px] mb-2 px-2'>
-                  Challenges for you
+                    Challenges for you
                 </h1>
                 {challenges.map((challenge, index) => (
-                    <div key={index} className="mb-2">
-                    <span className="text-gray-700">&#8226;</span> {challenge}
+                    <div key={index} className="mb-2 relative group">
+                        <span className="text-gray-700 hover:text-blue-500">&#8226;</span> {challenge.text}
+                        <div className="absolute top-0 left-1/2 invisible group-hover:visible">
+                            <span className="text-gray-400 ml-2">{challenge.points} points</span>
+                        </div>
                     </div>
                 ))}
             </div>
-            <h1 className='font-extrabold text-[#222328] text-[24px] mt-10 px-2 '>
-                Make reservations now
-                </h1>
             <div className="flex items-center p-4 space-x-4 rounded-lg">
-                
                 <img
                     src={hmap}  // Replace with your actual image source
                     alt="Small Image"
                     className="w-48 rounded-md mr-4"
                 />
-                <button className="bg-blue-500 text-white px-4 py-2 rounded">
-                    Book Now
-                </button>
-                </div>
+                <ChooseTripButton onTripChosen={handleTripChosen}/>
+                {showReserveRoom && (
+                    <button className="bg-blue-500 text-white px-4 py-2 rounded">
+                        Reserve Room
+                    </button>
+                )}
             </div>
+        </div>
     </div>
-    
+
   )
 }
 

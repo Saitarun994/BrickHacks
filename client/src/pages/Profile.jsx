@@ -8,11 +8,11 @@ const Profile = () => {
     const userPoints = 100; // Example value
     const numberOfHikesCompleted = 5; // Example value
     const hikesCompleted = [
-        { name: "Hike 1", imageUrl: {c2} },
-        { name: "Hike 2", imageUrl: "c3" },
-        { name: "Hike 3", imageUrl: "c4" },
-        { name: "Hike 4", imageUrl: "c5" },
-        { name: "Hike 5", imageUrl: "c6" }
+        { name: "Hike 1", imageUrl: c2 },
+        { name: "Hike 2", imageUrl: c3 },
+        { name: "Hike 3", imageUrl: c4 },
+        { name: "Hike 4", imageUrl: c5 },
+        { name: "Hike 5", imageUrl: c6 }
     ]; // Example array of completed hikes
 
     // State to manage the index of the currently displayed hike
@@ -51,7 +51,7 @@ const Profile = () => {
                 <p>Number of Hikes Completed: {numberOfHikesCompleted}</p>
                 <div className="hikes-completed" ref={containerRef}>
                     {hikesCompleted.map((hike, index) => (
-                        <div key={index} className={`hike-item ${index === currentIndex ? 'active' : ''}`}>
+                        <div key={index} className="">
                             <img src={hike.imageUrl} alt={hike.name} />
                             <p>{hike.name}</p>
                         </div>
