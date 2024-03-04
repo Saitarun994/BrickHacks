@@ -1,7 +1,9 @@
 <h1 align="center">
 <img src="media/banner.png">
 </h1> 
+
 # Terra Vista
+
 TerraVista is your ultimate guide to local adventures. From hiking trails to kayaking spots, discover personalized recommendations and connect with a community of like-minded explorers. With social features and seamless reservations, TerraVista ensures every outdoor experience is effortless and unforgettable. The app was built with MERN stack and integrated Auth0 and Stripe
 
 <img src="media/preview.gif" width=150%>
